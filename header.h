@@ -6,7 +6,7 @@
 /*   By: mameyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 15:22:15 by mameyer           #+#    #+#             */
-/*   Updated: 2016/11/18 17:58:34 by mameyer          ###   ########.fr       */
+/*   Updated: 2016/11/19 13:12:39 by mameyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ piece	ft_shift_left(piece a);
 piece	ft_shift_right(piece a);
 piece	ft_shift_up(piece a);
 piece	ft_shift_down(piece a);
-void	ft_print_grid(unsigned long int *grid);
+piece	ft_set_up_left(piece a);
+void	ft_print_grid(unsigned char *grid, int lines);
 void	ft_print_piece(piece a);
-int		ft_check_emptyness(piece grid, piece a);
+int		ft_check_emptyness(unsigned char grid, piece a);
 piece	ft_replace(piece grid, piece a);
+void	ft_set_zero(unsigned char **str);
 
 #endif
