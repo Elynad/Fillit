@@ -5,24 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mameyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 17:41:04 by mameyer           #+#    #+#             */
-/*   Updated: 2016/11/19 10:57:27 by mameyer          ###   ########.fr       */
+/*   Created: 2016/11/20 17:19:46 by mameyer           #+#    #+#             */
+/*   Updated: 2016/11/20 18:42:08 by mameyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "header.h"
+#include "libft.h"
 
-int		ft_check_emptyness(unsigned char grid, piece a)
+int		ft_check_emptyness(struct t_piece *a, unsigned short *grid, int index)
 {
-
-	if ((grid.l1 & a.l1) != 0)
+	if ((a->l1 & grid[index]) != 0)
+		return (1);
+	if ((a->l2 & grid[index + 1]) != 0)
+		return (1);
+	if ((a->l3 & grid[index + 2]) != 0)
+		return (1);
+	if ((a->l4 & grid[index + 3]) != 0)
+		return (1);
+	else
 		return (0);
-	if ((grid.l2 & a.l2) != 0)
-		return (0);
-	if ((grid.l3 & a.l3) != 0)
-		return (0);
-	if ((grid.l4 & a.l4) != 0)
-		return (0);
-	return (1);
 }

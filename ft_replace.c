@@ -5,20 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mameyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 17:46:59 by mameyer           #+#    #+#             */
-/*   Updated: 2016/11/18 17:50:42 by mameyer          ###   ########.fr       */
+/*   Created: 2016/11/20 17:31:27 by mameyer           #+#    #+#             */
+/*   Updated: 2016/11/20 18:41:57 by mameyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "header.h"
+#include "libft.h"
 
-piece	ft_replace(piece grid, piece a)
+void	ft_replace(struct t_piece a, unsigned short *grid, int index)
 {
-	grid.l1 = grid.l1 ^ a.l1;
-	grid.l2 = grid.l2 ^ a.l2;
-	grid.l3 = grid.l3 ^ a.l3;
-	grid.l4 = grid.l4 ^ a.l4;
-
-	return (grid);
+	grid[index] = grid[index] ^ a.l1;
+	grid[index + 1] = grid[index + 1] ^ a.l2;
+	grid[index + 2] = grid[index + 2] ^ a.l3;
+	grid[index + 3] = grid[index + 3] ^ a.l4;
 }

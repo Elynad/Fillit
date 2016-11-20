@@ -6,7 +6,7 @@
 /*   By: mameyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 13:27:22 by mameyer           #+#    #+#             */
-/*   Updated: 2016/11/18 16:31:13 by mameyer          ###   ########.fr       */
+/*   Updated: 2016/11/20 18:45:26 by mameyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_print_binary(unsigned long int i)
 	static char buffer [1 + sizeof(unsigned long int) * 8] = { 0 };
 	char *p=buffer-1+sizeof (unsigned long int)*8;
 	do { *--p = '0' + (i & 1); i >>= 1; } while (i);
-	j = (8 - ft_strlen(p));
+	j = (16 - ft_strlen(p));
 	while (j > 0)
 	{
 		ft_putchar('0');

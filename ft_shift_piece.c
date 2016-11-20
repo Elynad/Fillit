@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_grid.c                                    :+:      :+:    :+:   */
+/*   ft_shift_piece.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mameyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/20 16:17:41 by mameyer           #+#    #+#             */
-/*   Updated: 2016/11/20 18:42:30 by mameyer          ###   ########.fr       */
+/*   Created: 2016/11/20 16:30:51 by mameyer           #+#    #+#             */
+/*   Updated: 2016/11/20 18:43:25 by mameyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 #include "libft.h"
 
-void	ft_print_grid(unsigned short *grid, int size)
+void			ft_shift_up_left(struct t_piece *a)
 {
-	int		i;
-
-	i = 0;
-	while (i < size)
+	while (a->l1 == 0)
 	{
-		ft_print_binary(*grid);
-		i++;
+		a->l1 = a->l2;
+		a->l2 = a->l3;
+		a->l3 = a->l4;
+		a->l4 = 0;
 	}
-}
-
-void	ft_print_piece(struct t_piece a)
-{
-	ft_print_binary(a.l1);
-	ft_print_binary(a.l2);
-	ft_print_binary(a.l3);
-	ft_print_binary(a.l4);
+	while (a->l1 < 65535 && a->l2 < 65535 && a->l3 < 65535 && a->l4 < 65535)
+	{
+		a->l1 *= 2;
+		a->l2 *= 2;
+		a->l3 *= 2;
+		a->l4 *= 2;
+	}
 }
