@@ -6,7 +6,7 @@
 /*   By: mameyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/20 16:13:10 by mameyer           #+#    #+#             */
-/*   Updated: 2016/11/20 18:45:09 by mameyer          ###   ########.fr       */
+/*   Updated: 2016/11/21 15:02:58 by mameyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,18 @@ int		main(void)
 	int						i;			// Index du tableau des pieces
 
 	i = 0;
-	ft_print_grid(grid, 22);
+	ft_print_grid(grid, 16);
 	pieces[0].l1 = 0;
-	pieces[0].l2 = 1;
+	pieces[0].l2 = 0;
 	pieces[0].l3 = 3;
-	pieces[0].l4 = 1;
+	pieces[0].l4 = 3;
 	ft_putchar('\n');
 	ft_print_piece(pieces[0]);
 	ft_putchar('\n');
 	ft_shift_up_left(&pieces[0]);
 	ft_print_piece(pieces[0]);
 	ft_putchar('\n');
+/*
 	if (ft_check_emptyness(&pieces[i], grid, 0) == 0)
 	{
 		grid[0] = grid[0] ^ pieces[0].l1;
@@ -40,5 +41,6 @@ int		main(void)
 //		ft_replace(pieces[i], grid, 0);
 	}
 	ft_print_grid(grid, 22);
+*/
 	return (0);
 }
